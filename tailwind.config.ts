@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      padding: {
+        main: '32px',
+      },
       maxWidth: {
         mobile: '450px',
       },

@@ -40,7 +40,7 @@ function UploadPage() {
     }
   };
   return (
-    <div className="px-4">
+    <div className="px-main">
       {/* Title Section */}
       <h1 className="text-black text-lg font-bold font-['Pretendard Variable'] text-center">
         나만의 보정법 등록하기

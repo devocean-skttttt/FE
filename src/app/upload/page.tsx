@@ -98,11 +98,11 @@ function ImageUpload({
   image,
   onImageUpload,
   label,
-}: {
+}: Readonly<{
   image: File | null;
   onImageUpload: (e: React.ChangeEvent<HTMLInputElement>) => void;
   label: string;
-}) {
+}>) {
   return (
     <div className="relative w-[151px] h-[154px] bg-[#d9d9d9] rounded-[10px] shadow flex items-center justify-center">
       {image ? (
@@ -147,7 +147,8 @@ function UploadPage() {
   } = useUploadPageState();
 
   return (
-    <div className="px-6 mt-6">
+    <div className="px-main">
+      {/* Title Section */}
       <h1 className="text-black text-lg font-bold font-['Pretendard Variable'] text-center">
         나만의 보정법 등록하기
       </h1>
@@ -237,7 +238,10 @@ function UploadPage() {
       </div>
 
       <div className="mb-6">
-        <label className="block text-[#646262] text-[15px] font-bold mb-2">
+        <label
+          htmlFor="recipe"
+          className="block text-[#646262] text-[15px] font-bold mb-2"
+        >
           사진 업로드
         </label>
 
@@ -264,7 +268,10 @@ function UploadPage() {
       </div>
 
       <div className="mb-6">
-        <label className="block text-[#646262] text-[15px] font-bold mb-2">
+        <label
+          htmlFor="recipe"
+          className="block text-[#646262] text-[15px] font-bold mb-2"
+        >
           보정 레시피
         </label>
         <div className="mt-6 flex flex-wrap justify-center gap-4">
@@ -286,7 +293,7 @@ function UploadPage() {
             { name: '비네트', min: -100, max: 100 },
           ].map((item, index) => (
             <div
-              key={index}
+              key={item.name}
               data-index={index}
               className="flex flex-col items-center"
             >

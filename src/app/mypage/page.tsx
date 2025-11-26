@@ -1,5 +1,3 @@
-function Page() {
-  return <div>마이페이지</div>;
+export default function Page() {
+  return <>내가 올린 레시피</>;
 }
-
-export default Page;

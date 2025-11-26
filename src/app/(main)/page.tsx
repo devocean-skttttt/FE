@@ -1,9 +1,14 @@
-import Navigation from '@/components/Navigation';
+'use client';
+
+import { usePathname } from 'next/navigation';
+import Category from './Category';
 
 export default function Page() {
+  const pathname = usePathname();
+
   return (
-    <>
-      <Navigation />
-    </>
+    <div className="px-main">
+      <Category />
+    </div>
   );
 }
